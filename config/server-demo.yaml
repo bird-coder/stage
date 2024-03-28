@@ -1,0 +1,45 @@
+server:
+  addr: ":8081"
+  readTimeOut: 30
+  writeTimeOut: 30
+  maxHeaderBytes: 1048576
+logger:
+  logLevel: debug
+  logPath: "../error/error.log"
+  maxSize: 128
+  maxAge: 7
+  maxBackups: 30
+  compress: false
+databases:
+  "xxxxx":
+    driver: mysql
+    default: root:xxxx(@tcp(127.0.0.1:3306)/schema?charset=utf8&parseTime=True&loc=Local&timeout=1000ms
+    idleConns: 10 
+    openConns: 15
+    idleTimeout: 300
+    aliveTimeout: 300
+    cluster: false
+    sources:
+      - root:xxxx(@tcp(127.0.0.1:3306)/schema?charset=utf8&parseTime=True&loc=Local&timeout=1000ms
+    replicas:
+      - root:xxxx(@tcp(127.0.0.1:3306)/schema?charset=utf8&parseTime=True&loc=Local&timeout=1000ms
+cache:
+  redis:
+    addr: 127.0.0.1:6379
+    password: xxxxx
+    db: 0
+    protocol: 3
+    dialTimeout: 30
+    readTimeOut: 300
+    writeTimeOut: 300
+    poolSize: 16
+    idleConns: 8
+locker:
+  redis:
+    addr: 127.0.0.1:6379
+    password: xxxxxx
+    db: 0
+    protocol: 3
+    dialTimeout: 30
+    readTimeOut: 300
+    writeTimeOut: 300

@@ -1,3 +1,4 @@
 /vendor
 /stage
 /error
+/config/server.yaml
